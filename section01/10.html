@@ -5,15 +5,15 @@
 	</head>
 	<body>
 		<script>
-			function solution(day, arr) {
+			function solution(s, t) {
 				let answer = 0;
-				for (let x of arr) {
-					if (x % 10 == day) answer++;
+				for (let x of s) {
+					if (x == t) answer++;
 				}
 				return answer;
 			}
-			arr = [25, 23, 11, 47, 53, 17, 33];
-			console.log(solution(3, arr));
+			let str = "COMPUTERPROGRAMMING";
+			console.log(solution(str, "R"));
 		</script>
 	</body>
 </html>
