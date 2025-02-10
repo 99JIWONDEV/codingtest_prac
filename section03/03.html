@@ -7,8 +7,9 @@
         <script>
             function solution(str){
                 let answer="";
-                str = str.replace(/[a-zA-Z]/g, "")
-                console.log(str)
+                for(let x of str){
+                  if(!isNaN(x)) answer += x
+                }   
                 return parseInt(answer);
             }
             
