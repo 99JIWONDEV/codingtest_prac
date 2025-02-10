@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s, t){
+                let answer=[];
+                for(let i =0; i<s.length; i++){
+                  let min = 1000;
+                  for(let j =0; j<s.length; j++){
+                    if(t == s[j]){
+                      if(min > Math.abs(i-j)){
+                        min = Math.abs(i-j)
+                      }
+                    }
+                  }
+                  answer.push(min)
+                }
+                return answer;
+            }
+            
+            let str="teachermode";
+            console.log(solution(str, 'e'));
+        </script>
+    </body>
+</html>
