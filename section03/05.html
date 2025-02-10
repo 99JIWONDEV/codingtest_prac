@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(s){
+                let answer="";
+                let count= 1;
+                s=s+" " // 빈 문자열 추가 (마지막 문자 검사를 위해서)
+                for(let i =0; i<s.length-1; i ++){
+                  if(s[i]===s[i+1]) count++
+                  else{
+                    answer+=s[i]
+                    if(cnt>1) answer += String(cnt);
+                    cnt=1
+                  }
+                }
+                return answer;
+            }
+            
+            let str="KKHSSSSSSSE";
+            console.log(solution(str));
+        </script>
+    </body>
+</html>
