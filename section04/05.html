@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>출력결과</title>
+    </head>
+    <body>
+        <script>
+            function solution(n, k, card){
+                let arr1 =[]
+                let max = Number.MAX_SAFE_INTEGER;
+                let count = 0;
+                let answer = 0;
+                for(let i=0; i<n; i++){
+                  for(let j=i+1; j<n; j++){
+                    for(let k=j+1; k<n; k++){
+                      arr1.push(card[i]+card[j]+card[k])
+                    }
+                  }
+                }
+                arr1.sort((a,b)=>{
+                  return b-a;
+                })
+                for(let i =0; i <arr1.length; i++){
+                  if(arr1[i] < max){
+                    answer = arr1[i]
+                    count++
+                  }
+                  if(count == k) {
+                    break;
+                }
+            }
+            return answer;
+          }
+            
+            let arr=[13, 15, 34, 23, 45, 65, 33, 11, 26, 42];
+            console.log(solution(10, 3, arr));
+        </script>
+    </body>
+</html>
