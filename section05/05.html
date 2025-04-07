@@ -6,22 +6,13 @@
 	<body>
 		<script>
 			function solution(k, arr) {
-				let answer,
-					sum = 0,
-					lt = 0;
-          console.log(arr)
-				for(let rt = 0; rt < arr.length - k; rt++) {
-          if(rt>=k){
-            var tempSum = sum 
-            tempSum += arr[rt];
-            tempSum -= arr[lt++];
-            console.log("tempSum입니다:",tempSum)
-            if(tempSum > sum) sum = tempSum
-          }else{
-            sum += arr[rt];
-            console.log(sum)
-          }
-        }answer = sum;
+				let answer, sum = 0;
+        for(let i =0; i <k; i++) sum += arr[i];
+        answer = sum;
+        for(let i = k; i<arr.length; i++){
+          sum += (arr[i]-arr[i-k]);
+          answer=Math.max(answer, sum);
+        }
 				return answer;
 			}
 
