@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>출력결과</title>
+	</head>
+	<body>
+		<script>
+			function solution(k, arr) {
+				let answer,
+					sum = 0,
+					lt = 0;
+          console.log(arr)
+				for(let rt = 0; rt < arr.length - k; rt++) {
+          if(rt>=k){
+            var tempSum = sum 
+            tempSum += arr[rt];
+            tempSum -= arr[lt++];
+            console.log("tempSum입니다:",tempSum)
+            if(tempSum > sum) sum = tempSum
+          }else{
+            sum += arr[rt];
+            console.log(sum)
+          }
+        }answer = sum;
+				return answer;
+			}
+
+			let a = [12, 15, 11, 20, 25, 10, 20, 19, 13, 15];
+			console.log(solution(3, a));
+		</script>
+	</body>
+</html>
